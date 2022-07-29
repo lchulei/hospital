@@ -1,4 +1,4 @@
 package com.solvd.lava.hospital.people.employee;
 
-public class Manager extends Employee {
+public class Nurse extends Employee {
 }
