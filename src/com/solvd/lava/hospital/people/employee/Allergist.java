@@ -1,11 +1,11 @@
 package com.solvd.lava.hospital.people.employee;
 
-import com.solvd.lava.hospital.people.employee.interfaces.ExaminePatient;
+import com.solvd.lava.hospital.people.employee.interfaces.InteractWithPatient;
 import com.solvd.lava.hospital.people.patients.Patient;
 
 import java.util.Date;
 
-public class Allergist extends Employee implements ExaminePatient {
+public class Allergist extends Employee implements InteractWithPatient {
     private int doctorId;
 
     public Allergist() {
