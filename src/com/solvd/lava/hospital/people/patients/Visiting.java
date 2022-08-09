@@ -2,21 +2,22 @@ package com.solvd.lava.hospital.people.patients;
 
 import com.solvd.lava.hospital.enums.Diagnosis;
 import com.solvd.lava.hospital.enums.Referral;
-import com.solvd.lava.hospital.people.employee.FamilyDoctor;
 
 import java.util.Date;
 
 public class Visiting {
     private Date date;
-    private FamilyDoctor familyDoctor;
     private Diagnosis diagnosis;
     private Referral referral;
     private int doctorId;
     private int patientId;
 
-    public Visiting(Date date, FamilyDoctor familyDoctor, Diagnosis diagnosis, Referral referral, int doctorId, int patientId) {
+    public Visiting() {
+
+    }
+
+    public Visiting(Date date, Diagnosis diagnosis, Referral referral, int doctorId, int patientId) {
         this.date = date;
-        this.familyDoctor = familyDoctor;
         this.diagnosis = diagnosis;
         this.referral = referral;
         this.doctorId = doctorId;
@@ -29,14 +30,6 @@ public class Visiting {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public FamilyDoctor getFamilyDoctor() {
-        return familyDoctor;
-    }
-
-    public void setFamilyDoctor(FamilyDoctor familyDoctor) {
-        this.familyDoctor = familyDoctor;
     }
 
     public Diagnosis getDiagnosis() {
@@ -69,5 +62,16 @@ public class Visiting {
 
     public void setPatientId(int patientId) {
         this.patientId = patientId;
+    }
+
+    @Override
+    public String toString() {
+        return "Visiting{" +
+                "date=" + date +
+                ", diagnosis=" + diagnosis +
+                ", referral=" + referral +
+                ", doctorId=" + doctorId +
+                ", patientId=" + patientId +
+                '}';
     }
 }

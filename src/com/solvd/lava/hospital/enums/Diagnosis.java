@@ -9,7 +9,7 @@ public enum Diagnosis {
     SMALLPOX("Smallpox"),
     SINUSITIS("Sinusitis"),
     HEPATITIS("Hepatitis"),
-    FLU("Flu"), //terapevt
+    FLU("Flu"),
     DIABETES("Diabetes"),
     COLD("Cold"),
     STROKE("Stroke"),
@@ -18,7 +18,8 @@ public enum Diagnosis {
     OTITIS("Otitis"),
     POISONING("Poisoning"),
     OSTEOCHONDROSIS("Osteochondrosis"),
-    CYSTITIS("Cystitis");
+    CYSTITIS("Cystitis"),
+    NOTHING_WAS_FOUND("Nothing was found!");
 
     private String name;
 

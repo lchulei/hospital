@@ -2,13 +2,14 @@ package com.solvd.lava.hospital.people.patients;
 
 import com.solvd.lava.hospital.people.Human;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Patient extends Human {
     private int patientId;
     private Date registrationDate;
-    private List<Visiting> visitHistory;
+    private List<Visiting> visitHistory = new ArrayList<>();
 
     public Patient() {
 
@@ -44,5 +45,19 @@ public class Patient extends Human {
 
     public void setVisitHistory(List<Visiting> visitHistory) {
         this.visitHistory = visitHistory;
+    }
+
+    public void addNewVisiting(Visiting visit) {
+        visitHistory.add(visit);
+    }
+
+    public void printAllVisitingHistory() {
+        for(Visiting visiting : visitHistory) {
+            System.out.println(visiting.toString());
+        }
+    }
+
+    public Visiting getLastVisit() {
+        return visitHistory.size() == 0? null:visitHistory.get(visitHistory.size() - 1);
     }
 }

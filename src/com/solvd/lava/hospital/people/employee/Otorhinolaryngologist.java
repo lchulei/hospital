@@ -1,8 +1,13 @@
 package com.solvd.lava.hospital.people.employee;
 
+import com.solvd.lava.hospital.enums.Diagnosis;
+import com.solvd.lava.hospital.people.employee.interfaces.InteractWithPatient;
+import com.solvd.lava.hospital.people.patients.Patient;
+import com.solvd.lava.hospital.people.patients.Visiting;
+
 import java.util.Date;
 
-public class Otorhinolaryngologist extends Employee {
+public class Otorhinolaryngologist extends Employee implements InteractWithPatient {
     private int doctorId;
 
     public Otorhinolaryngologist() {
@@ -21,5 +26,37 @@ public class Otorhinolaryngologist extends Employee {
 
     public int getDoctorId() {
         return  doctorId;
+    }
+
+    @Override
+    public void examinePatient(Patient patient) {
+        int probabilityOfDisease = (int) (Math.random() * 11);
+        Visiting visit = new Visiting();
+        visit.setDate(new Date());
+        visit.setPatientId(patient.getPatientId());
+        visit.setDoctorId(doctorId);
+        switch (probabilityOfDisease) {
+            case 3:
+                visit.setDiagnosis(Diagnosis.SINUSITIS);
+                break;
+            case 8:
+                visit.setDiagnosis(Diagnosis.OTITIS);
+                break;
+            default:
+                visit.setDiagnosis(Diagnosis.NOTHING_WAS_FOUND);
+        }
+        System.out.println("Patient " + patient.getName() + " " + patient.getSurname() + " examine:");
+        System.out.println("Diagnosis: " + visit.getDiagnosis().getName());
+        patient.addNewVisiting(visit);
+    }
+
+    @Override
+    public void writeAReferral(Patient patient) {
+
+    }
+
+    @Override
+    public void writeAPrescription(Patient patient) {
+
     }
 }
