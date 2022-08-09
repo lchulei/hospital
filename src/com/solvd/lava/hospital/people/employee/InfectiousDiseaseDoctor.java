@@ -1,14 +1,19 @@
 package com.solvd.lava.hospital.people.employee;
 
+import com.solvd.lava.hospital.Main;
 import com.solvd.lava.hospital.enums.Diagnosis;
 import com.solvd.lava.hospital.people.employee.interfaces.InteractWithPatient;
 import com.solvd.lava.hospital.people.patients.Patient;
 import com.solvd.lava.hospital.people.patients.Visiting;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Date;
 
 public class InfectiousDiseaseDoctor extends Employee implements InteractWithPatient {
     private int doctorId;
+
+    private final static Logger LOGGER = LogManager.getLogger(InfectiousDiseaseDoctor.class);
 
     public InfectiousDiseaseDoctor() {
 
@@ -47,8 +52,8 @@ public class InfectiousDiseaseDoctor extends Employee implements InteractWithPat
             default:
                 visit.setDiagnosis(Diagnosis.NOTHING_WAS_FOUND);
         }
-        System.out.println("Patient " + patient.getName() + " " + patient.getSurname() + " examine:");
-        System.out.println("Diagnosis: " + visit.getDiagnosis().getName());
+        LOGGER.info("Patient " + patient.getName() + " " + patient.getSurname() + " examine:");
+        LOGGER.info("Diagnosis: " + visit.getDiagnosis().getName());
         patient.addNewVisiting(visit);
     }
 

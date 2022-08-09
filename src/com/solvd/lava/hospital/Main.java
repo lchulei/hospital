@@ -19,8 +19,8 @@ public class Main {
         patient.setSurname("Rio");
         allergist.examinePatient(patient);
         patient.printAllVisitingHistory();
-        LOGGER.info("Info Text");
-        LOGGER.warn("Warn Text");
-        LOGGER.error("Error Text");
+//        LOGGER.info("Info Text");
+//        LOGGER.warn("Warn Text");
+//        LOGGER.error("Error Text");
     }
 }

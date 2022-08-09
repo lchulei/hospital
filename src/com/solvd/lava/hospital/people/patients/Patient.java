@@ -1,6 +1,9 @@
 package com.solvd.lava.hospital.people.patients;
 
+import com.solvd.lava.hospital.Main;
 import com.solvd.lava.hospital.people.Human;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,6 +13,8 @@ public class Patient extends Human {
     private int patientId;
     private Date registrationDate;
     private List<Visiting> visitHistory = new ArrayList<>();
+
+    private final static Logger LOGGER = LogManager.getLogger(Patient.class);
 
     public Patient() {
 
@@ -53,7 +58,7 @@ public class Patient extends Human {
 
     public void printAllVisitingHistory() {
         for(Visiting visiting : visitHistory) {
-            System.out.println(visiting.toString());
+            LOGGER.info(visiting.toString());
         }
     }
 
