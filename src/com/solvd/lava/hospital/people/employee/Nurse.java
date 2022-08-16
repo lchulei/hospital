@@ -1,5 +1,7 @@
 package com.solvd.lava.hospital.people.employee;
 
+import com.solvd.lava.hospital.exceptions.IdException;
+
 import java.util.Date;
 
 public class Nurse extends Employee {
@@ -15,8 +17,12 @@ public class Nurse extends Employee {
         this.doctorId = doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
+    public void setDoctorId(int doctorId) throws IdException {
+        if(doctorId <= 0) {
+            throw new IdException("Id can`t be less than or equal to 0");
+        } else {
+            this.doctorId = doctorId;
+        }
     }
 
     public int getDoctorId() {

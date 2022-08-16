@@ -1,6 +1,7 @@
 package com.solvd.lava.hospital;
 
 import com.solvd.lava.hospital.enums.Diagnosis;
+import com.solvd.lava.hospital.exceptions.IdException;
 import com.solvd.lava.hospital.people.employee.Allergist;
 import com.solvd.lava.hospital.people.patients.Patient;
 import org.apache.logging.log4j.LogManager;
@@ -10,7 +11,7 @@ public class Main {
 
     private final static Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IdException {
         Allergist allergist = new Allergist();
         allergist.setDoctorId(1);
         Patient patient = new Patient();
@@ -22,5 +23,6 @@ public class Main {
 //        LOGGER.info("Info Text");
 //        LOGGER.warn("Warn Text");
 //        LOGGER.error("Error Text");
+        LOGGER.info("d123".replaceAll("\\d", "").length());
     }
 }

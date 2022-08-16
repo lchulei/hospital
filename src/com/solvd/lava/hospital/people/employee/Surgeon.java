@@ -2,6 +2,7 @@ package com.solvd.lava.hospital.people.employee;
 
 import com.solvd.lava.hospital.Main;
 import com.solvd.lava.hospital.enums.Diagnosis;
+import com.solvd.lava.hospital.exceptions.IdException;
 import com.solvd.lava.hospital.people.employee.interfaces.InteractWithPatient;
 import com.solvd.lava.hospital.people.patients.Patient;
 import com.solvd.lava.hospital.people.patients.Visiting;
@@ -28,8 +29,12 @@ public class Surgeon extends Employee implements InteractWithPatient {
         this.theNumberOfOperations = theNumberOfOperations;
     }
 
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
+    public void setDoctorId(int doctorId) throws IdException {
+        if(doctorId <= 0) {
+            throw new IdException("Id can`t be less than or equal to 0");
+        } else {
+            this.doctorId = doctorId;
+        }
     }
 
     public int getDoctorId() {

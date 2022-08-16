@@ -1,6 +1,7 @@
 package com.solvd.lava.hospital.people.patients;
 
 import com.solvd.lava.hospital.Main;
+import com.solvd.lava.hospital.exceptions.IdException;
 import com.solvd.lava.hospital.people.Human;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,8 +33,12 @@ public class Patient extends Human {
         return patientId;
     }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
+    public void setPatientId(int patientId) throws IdException {
+        if(patientId <= 0) {
+            throw new IdException("Id can`t be less than or equal to 0");
+        } else {
+            this.patientId = patientId;
+        }
     }
 
     public Date getRegistrationDate() {
@@ -65,4 +70,5 @@ public class Patient extends Human {
     public Visiting getLastVisit() {
         return visitHistory.size() == 0? null:visitHistory.get(visitHistory.size() - 1);
     }
-}
+
+    }

@@ -1,5 +1,6 @@
 package com.solvd.lava.hospital.people.employee;
 
+import com.solvd.lava.hospital.exceptions.PhoneNumberException;
 import com.solvd.lava.hospital.people.Human;
 
 import java.util.Date;
@@ -39,8 +40,12 @@ public abstract class Employee extends Human {
         return  gettingStarted;
     }
 
-    public void setWorkPhoneNumber(String workPhoneNumber) {
-        this.workPhoneNumber = workPhoneNumber;
+    public void setWorkPhoneNumber(String workPhoneNumber) throws PhoneNumberException {
+        if((workPhoneNumber.length() < 10 || workPhoneNumber.length() > 12) && workPhoneNumber.replaceAll("\\d", "").length() != 0) {
+            throw new PhoneNumberException("Invalid number");
+        } else {
+            this.workPhoneNumber = workPhoneNumber;
+        }
     }
 
     public String getWorkPhoneNumber() {
