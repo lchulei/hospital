@@ -7,7 +7,8 @@ public enum RoomType {
     GYNECOLOGICAL_DEPARTMENT("Gynecological department"),
     INFECTIOUS_DEPARTMENT("Infectious department"),
     CARDIOLOGY_DEPARTMENT("Cardiology department"),
-    OTORHINOLARYNGOLOGY_DEPARTMENT("Otorhinolaryngology department");
+    OTORHINOLARYNGOLOGY_DEPARTMENT("Otorhinolaryngology department"),
+    INPATIENT_DEPARTMENT("Inpatient department");
 
     private String name;
 

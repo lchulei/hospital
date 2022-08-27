@@ -4,9 +4,13 @@ import com.solvd.laba.hospital.enums.Diagnosis;
 import com.solvd.laba.hospital.people.patients.Patient;
 import com.solvd.laba.hospital.exceptions.IdException;
 import com.solvd.laba.hospital.people.employee.interfaces.ExaminePatient;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.log4j.Logger;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Cardiologist extends Employee implements ExaminePatient {
     private int doctorId;
@@ -17,8 +21,8 @@ public class Cardiologist extends Employee implements ExaminePatient {
 
     }
 
-    public Cardiologist(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                       float salary, Date gettingStarted, String workPhoneNumber) {
+    public Cardiologist(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                        float salary, LocalDate gettingStarted, String workPhoneNumber) {
         super(name, surname, birthday, sex, phoneNumber, address, salary, gettingStarted, workPhoneNumber);
     }
 
@@ -44,4 +48,19 @@ public class Cardiologist extends Employee implements ExaminePatient {
 
     }
 
+    @Override
+    public String toString() {
+        return "Cardiologist{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", sex='" + getSex() + '\'' +
+                ", birthday=" + getBirthday() +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", workPhoneNumber='" + getWorkPhoneNumber() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", salary=" + getSalary() +
+                ", gettingStarted=" + getGettingStarted() +
+                ", doctorId=" + doctorId +
+                '}';
+    }
 }

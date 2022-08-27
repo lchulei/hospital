@@ -5,7 +5,6 @@ public enum MedicineCategories {
     PAINKILLERS("Painkillers"),
     ANTI_ALLERGIC("Anti-allergic"),
     ANTIVIRUS("Antivirus"),
-    CONTRACEPTIVES("Contraceptives"),
     CARDIAC_DRUGS("Cardiac drugs"),
     SEDATIVES("Sedatives"),
     BIOLOGICAL_SUPPLEMENTS("Biological supplements");

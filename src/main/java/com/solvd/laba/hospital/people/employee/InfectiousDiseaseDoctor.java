@@ -6,7 +6,7 @@ import com.solvd.laba.hospital.exceptions.IdException;
 import com.solvd.laba.hospital.people.employee.interfaces.ExaminePatient;
 import org.apache.log4j.Logger;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class InfectiousDiseaseDoctor extends Employee implements ExaminePatient {
     private int doctorId;
@@ -17,8 +17,8 @@ public class InfectiousDiseaseDoctor extends Employee implements ExaminePatient 
 
     }
 
-    public InfectiousDiseaseDoctor(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                       float salary, Date gettingStarted, String workPhoneNumber) {
+    public InfectiousDiseaseDoctor(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                                   float salary, LocalDate gettingStarted, String workPhoneNumber) {
         super(name, surname, birthday, sex, phoneNumber, address, salary, gettingStarted, workPhoneNumber);
     }
 
@@ -44,4 +44,19 @@ public class InfectiousDiseaseDoctor extends Employee implements ExaminePatient 
 
     }
 
+    @Override
+    public String toString() {
+        return "InfectiousDiseaseDoctor{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", sex='" + getSex() + '\'' +
+                ", birthday=" + getBirthday() +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", workPhoneNumber='" + getWorkPhoneNumber() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", salary=" + getSalary() +
+                ", gettingStarted=" + getGettingStarted() +
+                ", doctorId=" + doctorId +
+                '}';
+    }
 }

@@ -1,8 +1,12 @@
 package com.solvd.laba.hospital.people.employee;
 
 import com.solvd.laba.hospital.exceptions.IdException;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Anesthetist extends Employee {
     private int doctorId;
@@ -11,8 +15,8 @@ public class Anesthetist extends Employee {
 
     }
 
-    public Anesthetist(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                       float salary, Date gettingStarted, String workPhoneNumber) {
+    public Anesthetist(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                       float salary, LocalDate gettingStarted, String workPhoneNumber) {
         super(name, surname, birthday, sex, phoneNumber, address, salary, gettingStarted, workPhoneNumber);
     }
 
@@ -28,4 +32,19 @@ public class Anesthetist extends Employee {
         return  doctorId;
     }
 
+    @Override
+    public String toString() {
+        return "Anesthetist{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", sex='" + getSex() + '\'' +
+                ", birthday=" + getBirthday() +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", workPhoneNumber='" + getWorkPhoneNumber() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", salary=" + getSalary() +
+                ", gettingStarted=" + getGettingStarted() +
+                ", doctorId=" + doctorId +
+                '}';
+    }
 }

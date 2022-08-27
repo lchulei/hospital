@@ -6,7 +6,7 @@ import com.solvd.laba.hospital.people.employee.interfaces.ExaminePatient;
 import com.solvd.laba.hospital.people.patients.Patient;
 import org.apache.log4j.Logger;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ObstetricianGynecologist extends Employee implements ExaminePatient {
     private int doctorId;
@@ -17,8 +17,8 @@ public class ObstetricianGynecologist extends Employee implements ExaminePatient
 
     }
 
-    public ObstetricianGynecologist(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                                    float salary, Date gettingStarted, String workPhoneNumber) {
+    public ObstetricianGynecologist(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                                    float salary, LocalDate gettingStarted, String workPhoneNumber) {
         super(name, surname, birthday, sex, phoneNumber, address, salary, gettingStarted, workPhoneNumber);
     }
 
@@ -44,4 +44,19 @@ public class ObstetricianGynecologist extends Employee implements ExaminePatient
 
     }
 
+    @Override
+    public String toString() {
+        return "ObstetricianGynecologist{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", sex='" + getSex() + '\'' +
+                ", birthday=" + getBirthday() +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", workPhoneNumber='" + getWorkPhoneNumber() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", salary=" + getSalary() +
+                ", gettingStarted=" + getGettingStarted() +
+                ", doctorId=" + doctorId +
+                '}';
+    }
 }

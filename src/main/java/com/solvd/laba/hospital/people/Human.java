@@ -2,12 +2,12 @@ package com.solvd.laba.hospital.people;
 
 import com.solvd.laba.hospital.exceptions.PhoneNumberException;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class Human {
     private String name;
     private String surname;
-    private Date birthday;
+    private LocalDate birthday;
     private String sex;
     private String phoneNumber;
     private String address;
@@ -16,7 +16,7 @@ public abstract class Human {
 
     }
 
-    public Human(String name, String surname, Date birthday, String sex, String phoneNumber, String address) {
+    public Human(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address) {
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
@@ -41,11 +41,11 @@ public abstract class Human {
         return  surname;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return  birthday;
     }
 

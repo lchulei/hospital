@@ -2,12 +2,12 @@ package com.solvd.laba.hospital.medicalItems.medicine;
 
 import com.solvd.laba.hospital.enums.MedicineCategories;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Medicine {
     private String name;
-    private Date dateOfManufacture;
-    private Date takeTo;
+    private LocalDate dateOfManufacture;
+    private LocalDate takeTo;
     private MedicineCategories categories;
     private String appointment;
 
@@ -15,7 +15,7 @@ public class Medicine {
 
     }
 
-    public Medicine(String name, Date dateOfManufacture, Date takeTo, String appointment, MedicineCategories categories) {
+    public Medicine(String name, LocalDate dateOfManufacture, LocalDate takeTo, String appointment, MedicineCategories categories) {
         this.name = name;
         this.dateOfManufacture = dateOfManufacture;
         this.takeTo = takeTo;
@@ -31,19 +31,19 @@ public class Medicine {
         return  name;
     }
 
-    public void setDateOfManufacture(Date dateOfManufacture) {
+    public void setDateOfManufacture(LocalDate dateOfManufacture) {
         this.dateOfManufacture = dateOfManufacture;
     }
 
-    public Date getDateOfManufacture() {
+    public LocalDate getDateOfManufacture() {
         return  dateOfManufacture;
     }
 
-    public void setTakeTo(Date takeTo) {
+    public void setTakeTo(LocalDate takeTo) {
         this.takeTo = takeTo;
     }
 
-    public Date getTakeTo() {
+    public LocalDate getTakeTo() {
         return  takeTo;
     }
 

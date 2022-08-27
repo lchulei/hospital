@@ -3,7 +3,7 @@ package com.solvd.laba.hospital.people.employee;
 import com.solvd.laba.hospital.medicalItems.inventory.Inventory;
 import com.solvd.laba.hospital.rooms.Room;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Maid extends Employee {
@@ -13,8 +13,8 @@ public class Maid extends Employee {
     public Maid() {
     }
 
-    public Maid(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                float salary, Date gettingStarted, String workPhoneNumber,
+    public Maid(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                float salary, LocalDate gettingStarted, String workPhoneNumber,
                 List<Inventory> fixedInventory, List<Room> fixedRoomNumbers) {
         super(name, surname, birthday, sex, phoneNumber, address, salary, gettingStarted, workPhoneNumber);
         this.fixedInventory = fixedInventory;
@@ -41,5 +41,20 @@ public class Maid extends Employee {
         if(!room.getIsRoomCleaned()) {
             room.setRoomCleaned(true);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Maid{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", sex='" + getSex() + '\'' +
+                ", birthday=" + getBirthday() +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", workPhoneNumber='" + getWorkPhoneNumber() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", salary=" + getSalary() +
+                ", gettingStarted=" + getGettingStarted() +
+                '}';
     }
 }

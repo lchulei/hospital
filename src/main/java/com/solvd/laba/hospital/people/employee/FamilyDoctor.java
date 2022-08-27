@@ -2,7 +2,7 @@ package com.solvd.laba.hospital.people.employee;
 
 import com.solvd.laba.hospital.exceptions.IdException;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class FamilyDoctor extends Employee {
     private int doctorId;
@@ -11,8 +11,8 @@ public class FamilyDoctor extends Employee {
 
     }
 
-    public FamilyDoctor(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                       float salary, Date gettingStarted, String workPhoneNumber) {
+    public FamilyDoctor(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                        float salary, LocalDate gettingStarted, String workPhoneNumber) {
         super(name, surname, birthday, sex, phoneNumber, address, salary, gettingStarted, workPhoneNumber);
     }
 
@@ -26,5 +26,21 @@ public class FamilyDoctor extends Employee {
 
     public int getDoctorId() {
         return  doctorId;
+    }
+
+    @Override
+    public String toString() {
+        return "FamilyDoctor{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", sex='" + getSex() + '\'' +
+                ", birthday=" + getBirthday() +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", workPhoneNumber='" + getWorkPhoneNumber() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", salary=" + getSalary() +
+                ", gettingStarted=" + getGettingStarted() +
+                ", doctorId=" + doctorId +
+                '}';
     }
 }

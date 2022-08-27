@@ -2,24 +2,25 @@ package com.solvd.laba.hospital.people.patients;
 
 import com.solvd.laba.hospital.exceptions.IdException;
 import com.solvd.laba.hospital.people.Human;
+import org.apache.log4j.Logger;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Patient extends Human {
     private int patientId;
-    private Date registrationDate;
+    private LocalDate registrationDate;
     private List<Visiting> visitHistory = new ArrayList<>();
 
-    //private final static Logger LOGGER = LogManager.getLogger(Patient.class);
+    private final static Logger LOGGER = Logger.getLogger(Patient.class);
 
     public Patient() {
 
     }
 
-    public Patient(String name, String surname, Date birthday, String sex, String phoneNumber, String address,
-                   int patientId, Date registrationDate, List<Visiting> visitHistory) {
+    public Patient(String name, String surname, LocalDate birthday, String sex, String phoneNumber, String address,
+                   int patientId, LocalDate registrationDate, List<Visiting> visitHistory) {
         super(name, surname, birthday, sex, phoneNumber, address);
         this.patientId = patientId;
         this.registrationDate = registrationDate;
@@ -38,11 +39,11 @@ public class Patient extends Human {
         }
     }
 
-    public Date getRegistrationDate() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
 
@@ -60,7 +61,7 @@ public class Patient extends Human {
 
     public void printAllVisitingHistory() {
         for(Visiting visiting : visitHistory) {
-            //LOGGER.info(visiting.toString());
+            LOGGER.info(visiting.toString());
         }
     }
 

@@ -3,10 +3,10 @@ package com.solvd.laba.hospital.people.patients;
 import com.solvd.laba.hospital.enums.Diagnosis;
 import com.solvd.laba.hospital.enums.Referral;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Visiting {
-    private Date date;
+    private LocalDate date;
     private int idOfTheExaminingDoctor;
     private int patientId;
     private Diagnosis diagnosis;
@@ -18,7 +18,7 @@ public class Visiting {
 
     }
 
-    public Visiting(Date date, int idOfTheExaminingDoctor, int patientId, Diagnosis diagnosis,
+    public Visiting(LocalDate date, int idOfTheExaminingDoctor, int patientId, Diagnosis diagnosis,
                     Referral referral, int idOfTheTreatsDoctor) {
         this.date = date;
         this.idOfTheExaminingDoctor = idOfTheExaminingDoctor;
@@ -29,11 +29,11 @@ public class Visiting {
         this.isClosed = false;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
